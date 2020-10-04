@@ -1,0 +1,55 @@
+﻿@model ScanResult
+@{ Layout = "_Layout"; ViewBag.Title = "Scan Remote Disk";}
+
+Scan a new directory <a asp-action="Index" class="btn btn-sm btn-primary">Back</a>
+
+@if (Model != null)
+{
+    <h2>Scan Result</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Last Write Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Size</td>
+                    <td>@item.LastWriteTime</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>@Html.Label("Total Files : " + @Model.TotalFiles)</div>
+    <div>@Html.Label("Total Size : " + @Model.TotalSize + " bytes")</div>
+
+    @if (Model.Errors.Count > 0)
+    {
+        <h2>Scan Errors</h2>
+        <table class="table table-sm table-striped table-bordered m-2">
+            <thead>
+            <tr>
+                <th>Error</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var error in Model.Errors)
+            {
+                <tr>
+                    <td>@error</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+}
+else
+{
+    <h3><strong>@ViewBag.ErrorMessage</strong></h3>
+}

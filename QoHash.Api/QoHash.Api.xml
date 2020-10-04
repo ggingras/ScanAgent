@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QoHash.Api</name>
+    </assembly>
+    <members>
+        <member name="M:QoHash.Api.Controllers.DiskAgentController.Scan(QoHash.Api.Dto.ScanDto)">
+            <summary>
+            Scan a directory and retrieve a list of all files and folders sorted by size
+            </summary>
+            <remarks>
+            Sample request:
+            
+                Get /api/DiskAgent/Scan
+                {
+                   {
+            		 "path" : "a valid path"
+            		}
+                }
+            </remarks>
+        </member>
+    </members>
+</doc>

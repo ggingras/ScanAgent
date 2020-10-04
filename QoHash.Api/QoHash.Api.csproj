@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\ggingras\Desktop\Personnel\QoHash\QoHash.Api\QoHash.Api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="C\**" />
+    <Content Remove="C\**" />
+    <EmbeddedResource Remove="C\**" />
+    <None Remove="C\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="QoHash.Api.v3.ncrunchproject" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QoHash.Core\QoHash.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="QoHash.Api.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>

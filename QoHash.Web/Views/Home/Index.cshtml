@@ -1,0 +1,22 @@
+﻿@model ScanDto
+@{ Layout = "_Layout"; ViewBag.Title = "Scan Remote Disk";}
+
+<h2>Scan Remote Disk</h2>
+
+<form class="form-horizontal" method="get" action="/Home/Scan">
+    <fieldset>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textarea">Enter a path to scan remote disk</label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="path" name="path"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+                <button>Scan</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
